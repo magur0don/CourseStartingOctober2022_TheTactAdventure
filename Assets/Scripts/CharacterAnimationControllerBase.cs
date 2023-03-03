@@ -14,7 +14,6 @@ public class CharacterAnimationControllerBase : MonoBehaviour
     {
         //　同じアニメーションだったら帰る
         if (Animator.GetCurrentAnimatorStateInfo(0).IsName(animationName)) {
-            Debug.Log("ここにくれう");
             return;
         }
 
