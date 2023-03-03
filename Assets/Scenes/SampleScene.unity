@@ -532,6 +532,18 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4200718544747413344, guid: 565d28aabb6db4b2885e130a52c7648b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4200718544747413344, guid: 565d28aabb6db4b2885e130a52c7648b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4200718544747413344, guid: 565d28aabb6db4b2885e130a52c7648b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4200718544747413344, guid: 565d28aabb6db4b2885e130a52c7648b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -571,5 +583,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8734160125599521707, guid: 565d28aabb6db4b2885e130a52c7648b, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 565d28aabb6db4b2885e130a52c7648b, type: 3}
+--- !u!1 &6537588572522540556 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2407653411735772314, guid: 565d28aabb6db4b2885e130a52c7648b, type: 3}
+  m_PrefabInstance: {fileID: 6537588572522540555}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6537588572522540557 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3785754036967498099, guid: 565d28aabb6db4b2885e130a52c7648b, type: 3}
+  m_PrefabInstance: {fileID: 6537588572522540555}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6537588572522540561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6537588572522540556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b920fa2cee23b4403b090452e107ce79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animator: {fileID: 6537588572522540557}
