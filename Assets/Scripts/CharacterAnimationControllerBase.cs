@@ -8,14 +8,14 @@ public class CharacterAnimationControllerBase : MonoBehaviour
 
     public const string Animation_Idle = "Idle";
     public const string Animation_Walk = "Walk";
-
-    private bool isGround = false;
+    public const string Animation_Jump = "Jump";
 
 
     protected void SetAnimation(string animationName)
     {
         //　同じアニメーションだったら帰る
         if (Animator.GetCurrentAnimatorStateInfo(0).IsName(animationName)) {
+
             return;
         }
 

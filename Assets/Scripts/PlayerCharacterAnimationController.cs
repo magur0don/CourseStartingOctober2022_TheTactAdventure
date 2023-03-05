@@ -31,7 +31,7 @@ public class PlayerCharacterAnimationController : CharacterAnimationControllerBa
         var pos = transform.position;
         pos.y += characterUnderPosYDiff;
         // Cast a ray straight down.
-        RaycastHit2D[] hits = Physics2D.RaycastAll(pos, Vector2.down,1f);
+        RaycastHit2D[] hits = Physics2D.RaycastAll(pos, Vector2.down,0.1f);
         if (hits.Count() == 0)
         {
             isGround = false;
@@ -54,6 +54,14 @@ public class PlayerCharacterAnimationController : CharacterAnimationControllerBa
         if (!isGround) {
             return;
         }
+        // 上方向のボタンが押されたら
+        if (Input.GetAxis("Vertical")>0) {
+
+            playerRigidbody2D.AddForce(Vector2.up*8f);
+            SetAnimation(Animation_Jump);
+            return;
+        }
+
 
 
         if (Input.GetAxis("Horizontal") == 0)
