@@ -16,7 +16,7 @@ public class PlayerCharacterAnimationController : CharacterAnimationControllerBa
 
     private float characterUnderPosYDiff = -1.1f;
 
-    private int colliderCount = 0;
+    private float jumpPower = 16f;
 
     // Start is called before the first frame update
     void Start()
@@ -70,7 +70,7 @@ public class PlayerCharacterAnimationController : CharacterAnimationControllerBa
         // 上方向のボタンが押されたら
         if (Input.GetAxis("Vertical")>0) {
 
-            playerRigidbody2D.AddForce(Vector2.up*8f);
+            playerRigidbody2D.AddForce(Vector2.up * jumpPower);
             SetAnimation(Animation_Jump);
             return;
         }
