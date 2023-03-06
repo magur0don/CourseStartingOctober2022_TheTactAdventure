@@ -12,9 +12,11 @@ public class PlayerCharacterAnimationController : CharacterAnimationControllerBa
 
     private float speedPower = 2.0f;
 
-    private bool isGround = false;
+    public bool isGround = false;
 
     private float characterUnderPosYDiff = -1.1f;
+
+    private int colliderCount = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +43,18 @@ public class PlayerCharacterAnimationController : CharacterAnimationControllerBa
         {
             if (hit.collider.tag == "Ground")
             {
-                isGround = true;
+                if (!isGround)
+                {
+                    isGround = true;
+                }
+                break;
+            }
+            else
+            {
+                if (isGround)
+                {
+                    isGround = false;
+                }
             }
         }
 
