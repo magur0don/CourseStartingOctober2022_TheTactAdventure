@@ -107,4 +107,9 @@ public class PlayerCharacterAnimationController : CharacterAnimationControllerBa
             playerSpriteRenderer.flipX = true;
         }
     }
+
+    public void CreateMisicNote() {
+        Debug.Log("aaaa");
+    }
+
 }

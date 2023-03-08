@@ -32,7 +32,6 @@ public class CharacterAnimationControllerBase : MonoBehaviour
     {
         isAttackAnimation = true;
         yield return new WaitUntil(()=> Animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1);
-
         isAttackAnimation = false;
     }
 
