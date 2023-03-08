@@ -64,9 +64,10 @@ public class PlayerCharacterAnimationController : CharacterAnimationControllerBa
     void Update()
     {
         // 空中にいる間は何もできない。もしくは降下モーションを出す
-        if (!isGround) {
+        if (!isGround || isAttackAnimation) {
             return;
         }
+
         // 上方向のボタンが押されたら
         if (Input.GetAxis("Vertical")>0) {
 
@@ -75,6 +76,10 @@ public class PlayerCharacterAnimationController : CharacterAnimationControllerBa
             return;
         }
 
+        if (Input.GetKeyDown( KeyCode.Space)) {
+            SetAnimation(Animation_Attack);
+            return;
+        }
 
 
         if (Input.GetAxis("Horizontal") == 0)

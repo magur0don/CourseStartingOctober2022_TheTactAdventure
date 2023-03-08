@@ -9,7 +9,9 @@ public class CharacterAnimationControllerBase : MonoBehaviour
     public const string Animation_Idle = "Idle";
     public const string Animation_Walk = "Walk";
     public const string Animation_Jump = "Jump";
+    public const string Animation_Attack = "Attack";
 
+    protected bool isAttackAnimation = false;
 
     protected void SetAnimation(string animationName)
     {
@@ -18,7 +20,20 @@ public class CharacterAnimationControllerBase : MonoBehaviour
 
             return;
         }
-
         Animator.Play(animationName, 0);
+
+        if (animationName.Equals(Animation_Attack))
+        {
+            StartCoroutine(StartWaitAnimation());
+        }
     }
+
+    IEnumerator StartWaitAnimation()
+    {
+        isAttackAnimation = true;
+        yield return new WaitUntil(()=> Animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1);
+
+        isAttackAnimation = false;
+    }
+
 }
