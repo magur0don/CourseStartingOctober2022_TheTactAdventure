@@ -18,7 +18,10 @@ public class PlayerCharacterAnimationController : CharacterAnimationControllerBa
 
     private float jumpPower = 16f;
 
-    public GameObject AttackNote;
+    public GameObject AttackNoteLow;
+    public GameObject AttackNoteMiddle;
+
+    private CharacterParameterBase characterParameterBase;
 
 
     // Start is called before the first frame update
@@ -27,6 +30,7 @@ public class PlayerCharacterAnimationController : CharacterAnimationControllerBa
         // 自分のSpriteRendererを取得
         playerSpriteRenderer = this.GetComponent<SpriteRenderer>();
         playerRigidbody2D = this.GetComponent<Rigidbody2D>();
+        characterParameterBase = this.GetComponent<CharacterParameterBase>();
 
         SetAnimation(Animation_Idle);
     }
@@ -114,7 +118,14 @@ public class PlayerCharacterAnimationController : CharacterAnimationControllerBa
     public void CreateMisicNote()
     {
         var thisTransform = this.transform;
-        var note = Instantiate(AttackNote, thisTransform);
+        var instantiateNote = AttackNoteLow;
+
+        if (characterParameterBase.GetCharacterLevel >= 2)
+        {
+            instantiateNote = AttackNoteMiddle;
+        }
+
+        var note = Instantiate(instantiateNote, thisTransform);
 
         if (playerSpriteRenderer.flipX)
         {

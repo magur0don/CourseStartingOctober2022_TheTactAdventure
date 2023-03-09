@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2041491142}
   - component: {fileID: 3221849477107506019}
   m_Layer: 0
-  m_Name: AttackEffect_1
+  m_Name: AttackEffect_1 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

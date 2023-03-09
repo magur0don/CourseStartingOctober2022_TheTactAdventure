@@ -7,6 +7,21 @@ public class CharacterParameterBase : MonoBehaviour
     [SerializeField]
     protected float hitPoint = 2f;
 
+    private float maxHitPoint = 2f;
+
+    [SerializeField]
+    protected int characterLevel = 1;
+
+    public int GetCharacterLevel
+    {
+        get { return characterLevel; }
+    }
+
+    private void Start()
+    {
+        maxHitPoint = hitPoint;
+    }
+
     public void Damage(float damage)
     {
         hitPoint -= damage;
@@ -14,7 +29,16 @@ public class CharacterParameterBase : MonoBehaviour
         {
             this.gameObject.SetActive(false);
         }
-            
     }
 
+
+    public void LevelUp(int upperLevel)
+    {
+        characterLevel += upperLevel;
+
+        // HitPointの上昇
+        maxHitPoint += upperLevel;
+        hitPoint += upperLevel;
+
+    }
 }
