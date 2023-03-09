@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6537588572522540562}
   - component: {fileID: 6537588572522540561}
   - component: {fileID: 6812652792794485822}
+  - component: {fileID: 7873377250220696168}
   m_Layer: 0
   m_Name: tact
   m_TagString: Untagged
@@ -132,7 +133,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.64, y: 1.28}
+  m_Size: {x: 0.64, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &6537588572522540561
 MonoBehaviour:
@@ -147,6 +148,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Animator: {fileID: 3785754036967498099}
+  isGround: 0
+  AttackNote: {fileID: 8940017355704944636, guid: 97be27f5373f642f2b6b8f4cc1af9f51, type: 3}
 --- !u!50 &6812652792794485822
 Rigidbody2D:
   serializedVersion: 4
@@ -161,10 +164,23 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.02
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7873377250220696168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2407653411735772314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b13b2d14175de43a5a74dd866e35de77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitPoint: 2

@@ -21,7 +21,6 @@ public class PlayerCharacterAnimationController : CharacterAnimationControllerBa
     public GameObject AttackNote;
 
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -112,17 +111,20 @@ public class PlayerCharacterAnimationController : CharacterAnimationControllerBa
         }
     }
 
-    public void CreateMisicNote() {
-        var note = Instantiate(AttackNote,this.transform);
+    public void CreateMisicNote()
+    {
+        var thisTransform = this.transform;
+        var note = Instantiate(AttackNote, thisTransform);
 
         if (playerSpriteRenderer.flipX)
         {
+            note.transform.position += Vector3.left*2;
             note.GetComponent<Rigidbody2D>().AddForce(Vector2.left *100);
         }
         else
         {
+            note.transform.position += Vector3.right*2;
             note.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 100);
-
         }
     }
 
