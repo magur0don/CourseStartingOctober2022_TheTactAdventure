@@ -18,6 +18,10 @@ public class PlayerCharacterAnimationController : CharacterAnimationControllerBa
 
     private float jumpPower = 16f;
 
+    public GameObject AttackNote;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -109,7 +113,17 @@ public class PlayerCharacterAnimationController : CharacterAnimationControllerBa
     }
 
     public void CreateMisicNote() {
-        Debug.Log("aaaa");
+        var note = Instantiate(AttackNote,this.transform);
+
+        if (playerSpriteRenderer.flipX)
+        {
+            note.GetComponent<Rigidbody2D>().AddForce(Vector2.left *100);
+        }
+        else
+        {
+            note.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 100);
+
+        }
     }
 
 }

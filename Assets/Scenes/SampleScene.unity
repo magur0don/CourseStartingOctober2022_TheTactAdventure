@@ -938,6 +938,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6537588572522540561, guid: 565d28aabb6db4b2885e130a52c7648b, type: 3}
+      propertyPath: AttackNote
+      value: 
+      objectReference: {fileID: 8940017355704944636, guid: 97be27f5373f642f2b6b8f4cc1af9f51, type: 3}
     - target: {fileID: 6537588572522540562, guid: 565d28aabb6db4b2885e130a52c7648b, type: 3}
       propertyPath: m_Size.y
       value: 1
