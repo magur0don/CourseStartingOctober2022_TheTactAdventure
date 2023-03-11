@@ -5,20 +5,18 @@ using UnityEngine;
 public class EnemyCharacterAnimationController : CharacterAnimationControllerBase
 {
 
-    private SpriteRenderer playerSpriteRenderer;
-
-    private Rigidbody2D playerRigidbody2D;
+    private Rigidbody2D enemyRigidbody2D;
 
     private float speedPower = 1.8f;
 
     public EnemyPlayerSearch EnemyPlayerSearch;
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         // 自分のSpriteRendererを取得
-        playerSpriteRenderer = this.GetComponent<SpriteRenderer>();
-        playerRigidbody2D = this.GetComponent<Rigidbody2D>();
+        enemyRigidbody2D = this.GetComponent<Rigidbody2D>();
 
         SetAnimation(Animation_Idle);
     }
@@ -33,14 +31,14 @@ public class EnemyCharacterAnimationController : CharacterAnimationControllerBas
         }
         if (EnemyPlayerSearch.PlayerCharacterDistance < 0)
         {
-            playerRigidbody2D.velocity = Vector2.right * speedPower;
-            SetAnimation(Animation_Walk);
-            playerSpriteRenderer.flipX = false;
+            //playerRigidbody2D.velocity = Vector2.right * speedPower;
+            SetAnimation(Animation_Attack);
+            characterSpriteRenderer.flipX = false;
         }
         else {
-            playerRigidbody2D.velocity = Vector2.left * speedPower;
-            SetAnimation(Animation_Walk);
-            playerSpriteRenderer.flipX = true;
+            //playerRigidbody2D.velocity = Vector2.left * speedPower;
+            SetAnimation(Animation_Attack);
+            characterSpriteRenderer.flipX = true;
         }
     }
 }

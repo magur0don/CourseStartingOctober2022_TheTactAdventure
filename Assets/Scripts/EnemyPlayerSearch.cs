@@ -10,7 +10,8 @@ public class EnemyPlayerSearch : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.GetComponent<PlayerCharacterAnimationController>()) {
+        if (collision.GetComponent<PlayerCharacterAnimationController>())
+        {
             IsSearchPlayer = true;
             var distance = this.transform.position - collision.transform.position;
             PlayerCharacterDistance = distance.x;

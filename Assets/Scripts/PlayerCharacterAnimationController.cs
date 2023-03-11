@@ -6,8 +6,6 @@ using System.Linq;
 public class PlayerCharacterAnimationController : CharacterAnimationControllerBase
 {
 
-    private SpriteRenderer playerSpriteRenderer;
-
     private Rigidbody2D playerRigidbody2D;
 
     private float speedPower = 2.0f;
@@ -18,19 +16,12 @@ public class PlayerCharacterAnimationController : CharacterAnimationControllerBa
 
     private float jumpPower = 16f;
 
-    public GameObject AttackNoteLow;
-    public GameObject AttackNoteMiddle;
-
-    private CharacterParameterBase characterParameterBase;
-
-
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-        // 自分のSpriteRendererを取得
-        playerSpriteRenderer = this.GetComponent<SpriteRenderer>();
+        base.Start();
+
         playerRigidbody2D = this.GetComponent<Rigidbody2D>();
-        characterParameterBase = this.GetComponent<CharacterParameterBase>();
 
         SetAnimation(Animation_Idle);
     }
@@ -105,38 +96,15 @@ public class PlayerCharacterAnimationController : CharacterAnimationControllerBa
 
         if (Input.GetAxis("Horizontal") > 0)
         {
-            playerRigidbody2D.velocity = Vector2.right * speedPower;   
-            playerSpriteRenderer.flipX = false;
+            playerRigidbody2D.velocity = Vector2.right * speedPower;
+            characterSpriteRenderer.flipX = false;
         }
         else if (Input.GetAxis("Horizontal") < 0)
         {
             playerRigidbody2D.velocity = Vector2.left * speedPower;
-            playerSpriteRenderer.flipX = true;
+            characterSpriteRenderer.flipX = true;
         }
     }
 
-    public void CreateMisicNote()
-    {
-        var thisTransform = this.transform;
-        var instantiateNote = AttackNoteLow;
-
-        if (characterParameterBase.GetCharacterLevel >= 2)
-        {
-            instantiateNote = AttackNoteMiddle;
-        }
-
-        var note = Instantiate(instantiateNote, thisTransform);
-
-        if (playerSpriteRenderer.flipX)
-        {
-            note.transform.position += Vector3.left*2;
-            note.GetComponent<Rigidbody2D>().AddForce(Vector2.left *100);
-        }
-        else
-        {
-            note.transform.position += Vector3.right*2;
-            note.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 100);
-        }
-    }
 
 }

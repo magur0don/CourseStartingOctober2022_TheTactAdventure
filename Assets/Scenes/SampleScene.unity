@@ -566,6 +566,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1415684147, guid: 00fc7aac587aa47928a2acd3c804b168, type: 3}
+      propertyPath: AttackNoteLow
+      value: 
+      objectReference: {fileID: 8940017355704944636, guid: d2b5215123ad84563af571dab809dcdb, type: 3}
+    - target: {fileID: 1415684147, guid: 00fc7aac587aa47928a2acd3c804b168, type: 3}
+      propertyPath: AttackNoteMiddle
+      value: 
+      objectReference: {fileID: 8940017355704944636, guid: 97be27f5373f642f2b6b8f4cc1af9f51, type: 3}
     - target: {fileID: 2407653411735772314, guid: 00fc7aac587aa47928a2acd3c804b168, type: 3}
       propertyPath: m_Name
       value: Enemy

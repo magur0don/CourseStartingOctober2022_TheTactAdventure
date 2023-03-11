@@ -13,6 +13,24 @@ public class CharacterAnimationControllerBase : MonoBehaviour
 
     protected bool isAttackAnimation = false;
 
+    [SerializeField]
+    protected GameObject AttackNoteLow;
+
+    [SerializeField]
+    protected GameObject AttackNoteMiddle;
+
+    protected CharacterParameterBase characterParameterBase;
+
+    protected SpriteRenderer characterSpriteRenderer;
+
+    protected virtual void Start()
+    {
+        characterParameterBase = this.GetComponent<CharacterParameterBase>();
+        // 自分のSpriteRendererを取得
+        characterSpriteRenderer = this.GetComponent<SpriteRenderer>();
+        Debug.Log(characterSpriteRenderer);
+    }
+
     protected void SetAnimation(string animationName)
     {
         //　同じアニメーションだったら帰る
@@ -35,4 +53,27 @@ public class CharacterAnimationControllerBase : MonoBehaviour
         isAttackAnimation = false;
     }
 
+    public void CreateMisicNote()
+    {
+        var thisTransform = this.transform;
+        var instantiateNote = AttackNoteLow;
+
+        if (characterParameterBase.GetCharacterLevel >= 2)
+        {
+            instantiateNote = AttackNoteMiddle;
+        }
+
+        var note = Instantiate(instantiateNote, thisTransform);
+
+        if (characterSpriteRenderer.flipX)
+        {
+            note.transform.position += Vector3.left * 2;
+            note.GetComponent<Rigidbody2D>().AddForce(Vector2.left * 100);
+        }
+        else
+        {
+            note.transform.position += Vector3.right * 2;
+            note.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 100);
+        }
+    }
 }
