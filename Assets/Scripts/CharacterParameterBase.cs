@@ -31,14 +31,16 @@ public class CharacterParameterBase : MonoBehaviour
         }
     }
 
+    public void Revival()
+    {
+        hitPoint = maxHitPoint;
+    }
 
     public void LevelUp(int upperLevel)
     {
         characterLevel += upperLevel;
-
         // HitPointの上昇
         maxHitPoint += upperLevel;
         hitPoint += upperLevel;
-
     }
 }
