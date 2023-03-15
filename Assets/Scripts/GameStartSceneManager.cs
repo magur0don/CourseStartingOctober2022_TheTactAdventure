@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GameStartSceneManager : MonoBehaviour
 {
-    public void StartMainGame()
+    public void StageChoiceTransition()
     {
-        TactAdventureSceneManager.Instance.SceneTransition(TactAdventureSceneManager.GameMainSceneName);
+        TactAdventureSceneManager.Instance.SceneTransition(TactAdventureSceneManager.GameStageChoiceSceneName);
     }
 }

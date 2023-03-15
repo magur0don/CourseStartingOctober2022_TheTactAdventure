@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class TactAdventureSceneManager : SingletonMonoBehaviour<TactAdventureSceneManager>
 {
     public const string GameStartSceneName = "GameStart";
+    public const string GameStageChoiceSceneName = "GameStageChoice";
     public const string GameMainSceneName = "GameMain";
     public const string GameResultSceneName = "GameResult";
 
