@@ -15,5 +15,6 @@ public class PowerUpItem : ItemBase
     public void LevelUpItemFunction(CharacterParameterBase characterParameterBase)
     {
         characterParameterBase.LevelUp(upperLevel);
+        this.gameObject.SetActive(false);
     }
 }

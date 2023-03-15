@@ -46,7 +46,13 @@ public class GameSceneManager : MonoBehaviour
                 }
                 break;
             case GameState.GameOver:
-                Debug.Log("gameClear");
+                if (GameClearPoint.GameClear) {
+
+                    TactAdventureSceneManager.Instance.SceneTransition(TactAdventureSceneManager.GameResultSceneName);
+                    GameClearPoint.GameClear = false;
+
+                }
+
                 break;
         }
     }
