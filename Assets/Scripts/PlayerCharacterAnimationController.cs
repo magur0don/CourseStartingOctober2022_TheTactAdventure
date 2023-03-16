@@ -8,7 +8,7 @@ public class PlayerCharacterAnimationController : CharacterAnimationControllerBa
 
     private Rigidbody2D playerRigidbody2D;
 
-    private float speedPower = 2.0f;
+    private float speedPower = 4.0f;
 
     public bool isGround = false;
 

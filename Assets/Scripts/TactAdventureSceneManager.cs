@@ -17,5 +17,7 @@ public class TactAdventureSceneManager : SingletonMonoBehaviour<TactAdventureSce
     public void SceneTransition(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+      
     }
+
 }
