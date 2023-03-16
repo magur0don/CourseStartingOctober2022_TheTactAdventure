@@ -265,6 +265,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1759221170}
     m_Modifications:
+    - target: {fileID: 774129559084893658, guid: 9ee2a234b8a4442a29f40d5140797869, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1589461048}
+    - target: {fileID: 774129559084893658, guid: 9ee2a234b8a4442a29f40d5140797869, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GameStartSceneTransition
+      objectReference: {fileID: 0}
+    - target: {fileID: 774129559084893658, guid: 9ee2a234b8a4442a29f40d5140797869, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameResultSceneManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 774129559084893659, guid: 9ee2a234b8a4442a29f40d5140797869, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
