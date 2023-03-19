@@ -7,6 +7,12 @@ public class GameStageChoiceSceneManager : MonoBehaviour
 {
     private int choiceLevel = 0;
 
+    private void Start()
+    {
+        TactAdventureSoundManager.Instance.PlayeBGM
+            ( TactAdventureSoundManager.BGMType.StageChoiceBGM);
+    }
+
     public void StartMainGame(int level)
     {
         choiceLevel = level;

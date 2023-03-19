@@ -148,8 +148,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Animator: {fileID: 3785754036967498099}
+  AttackNoteLow: {fileID: 0}
+  AttackNoteMiddle: {fileID: 0}
   isGround: 0
-  AttackNote: {fileID: 8940017355704944636, guid: 97be27f5373f642f2b6b8f4cc1af9f51, type: 3}
 --- !u!50 &6812652792794485822
 Rigidbody2D:
   serializedVersion: 4
@@ -170,7 +171,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &7873377250220696168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,3 +185,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoint: 2
+  characterLevel: 1
