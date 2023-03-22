@@ -31,11 +31,12 @@ public class GameMainUIManager : MonoBehaviour
         {
             // ゲージの位置をPlayerの位置に同期する
             HPGauge.transform.position = mainCam.WorldToScreenPoint(playerCharacterTransform.position + gaugeOffset);
-
+       
             // 比率が変更前と違っていたら更新する
             if (currentPlayerHPRate != PlayerCharacterParameterBase.GetHPRate)
             {
                 HPGauge.SetGaugeRate(PlayerCharacterParameterBase.GetHPRate);
+                currentPlayerHPRate = PlayerCharacterParameterBase.GetHPRate;
             }
         }
     }
