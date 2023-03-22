@@ -17,6 +17,14 @@ public class CharacterParameterBase : MonoBehaviour
         get { return characterLevel; }
     }
 
+    /// <summary>
+    /// HPの比率を取得する
+    /// </summary>
+    public float GetHPRate
+    { 
+        get { return hitPoint / maxHitPoint; }
+    }
+    
     private void Start()
     {
         maxHitPoint = hitPoint;
