@@ -26,7 +26,7 @@ public class GameSceneManager : MonoBehaviour
 
     public List<Vector2> EnemyPos = new List<Vector2>();
 
-    
+    public GameMainUIManager GameMainUIManager;
 
     // プレイヤーが死んだらCheckPointから復活する
     private void Update()
@@ -47,8 +47,10 @@ public class GameSceneManager : MonoBehaviour
                         Debug.Log("そのレベルのPosがありません");
                     }
                     var enemy = Instantiate(Enemy);
-                    enemy.transform.position = EnemyPos[i];
 
+                    enemy.transform.position = EnemyPos[i];
+                    var enemyParam = enemy.GetComponent<CharacterParameterBase>();
+                    GameMainUIManager.SetEnemiesGaugeSetting(enemyParam);
                 }
                 GameStates = GameState.GameStart;
                 break;
