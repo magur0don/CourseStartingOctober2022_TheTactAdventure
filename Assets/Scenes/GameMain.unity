@@ -1144,9 +1144,9 @@ MonoBehaviour:
   Enemy: {fileID: 2407653411735772314, guid: 00fc7aac587aa47928a2acd3c804b168, type: 3}
   GameLevel: 1
   EnemyPos:
-  - {x: 10, y: 0}
-  - {x: 16, y: 0}
   - {x: 20, y: 0}
+  - {x: 10, y: 0}
+  - {x: 30, y: 0}
   GameMainUIManager: {fileID: 1851487894}
 --- !u!1001 &2087606654
 PrefabInstance:

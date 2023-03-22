@@ -22,6 +22,8 @@ public class EnemyCharacterAnimationController : CharacterAnimationControllerBas
 
     private float waitSeconds = 2f;
 
+    private float currentWaitSeconds = 2f;
+
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -34,6 +36,8 @@ public class EnemyCharacterAnimationController : CharacterAnimationControllerBas
         {
             wayPoints[i] += this.transform.position;
         }
+        waitSeconds = Random.Range(1f, 3f);
+        currentWaitSeconds = waitSeconds;
     }
 
     // Update is called once per frame
@@ -50,7 +54,8 @@ public class EnemyCharacterAnimationController : CharacterAnimationControllerBas
                 if (characterSpriteRenderer.flipX)
                 {
                     characterSpriteRenderer.flipX = false;
-                    waitSeconds = 2f;
+                    currentWaitSeconds = Random.Range(1f, 3f);
+                    waitSeconds = currentWaitSeconds;
                 }
             }
         }
@@ -62,7 +67,8 @@ public class EnemyCharacterAnimationController : CharacterAnimationControllerBas
                 if (!characterSpriteRenderer.flipX)
                 {
                     characterSpriteRenderer.flipX = true;
-                    waitSeconds = 2f;
+                    currentWaitSeconds = Random.Range(1f, 3f);
+                    waitSeconds = currentWaitSeconds;
                 }
             }
         }
