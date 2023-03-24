@@ -9,6 +9,11 @@ public class CharacterParameterBase : MonoBehaviour
 
     private float maxHitPoint = 2f;
 
+    public float GetMaxHitPoint
+    { 
+        get { return maxHitPoint; }
+    }
+
     [SerializeField]
     protected int characterLevel = 1;
 
@@ -16,6 +21,8 @@ public class CharacterParameterBase : MonoBehaviour
     {
         get { return characterLevel; }
     }
+
+    public bool IsDead = false;
 
     /// <summary>
     /// HPの比率を取得する
@@ -35,12 +42,14 @@ public class CharacterParameterBase : MonoBehaviour
         hitPoint -= damage;
         if (hitPoint <= 0f)
         {
+            IsDead = true;
             this.gameObject.SetActive(false);
         }
     }
 
     public void Revival()
     {
+        IsDead = false;
         hitPoint = maxHitPoint;
     }
 
@@ -51,4 +60,5 @@ public class CharacterParameterBase : MonoBehaviour
         maxHitPoint += upperLevel;
         hitPoint += upperLevel;
     }
+
 }
