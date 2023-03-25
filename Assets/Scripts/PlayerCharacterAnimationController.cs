@@ -23,7 +23,22 @@ public class PlayerCharacterAnimationController : CharacterAnimationControllerBa
 
         playerRigidbody2D = this.GetComponent<Rigidbody2D>();
 
+        characterParameterBase.DamageAction = () =>
+        {
+            if (this.gameObject.activeSelf)
+            {
+                StartCoroutine(DamageAction());
+            }
+        };
+
         SetAnimation(Animation_Idle);
+    }
+
+    IEnumerator DamageAction()
+    {
+        TimeScaleManager.Instance.SetTimeScale(0f);
+        yield return new WaitForSecondsRealtime(0.5f);
+        TimeScaleManager.Instance.SetTimeScale(1f);
     }
 
     private void FixedUpdate()

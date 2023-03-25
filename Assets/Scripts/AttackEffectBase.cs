@@ -15,6 +15,8 @@ public class AttackEffectBase : MonoBehaviour
             var characterParam = collision.gameObject.GetComponent<CharacterParameterBase>();
             characterParam.Damage(damage);
 
+            characterParam.DamageAction?.Invoke();
+
             this.gameObject.SetActive(false);
         }
     }

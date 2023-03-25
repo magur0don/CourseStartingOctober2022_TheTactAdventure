@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CharacterParameterBase : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class CharacterParameterBase : MonoBehaviour
 
     public bool IsDead = false;
 
+    public UnityAction DamageAction = null;
+
     /// <summary>
     /// HPの比率を取得する
     /// </summary>
@@ -40,6 +43,7 @@ public class CharacterParameterBase : MonoBehaviour
     public void Damage(float damage)
     {
         hitPoint -= damage;
+
         if (hitPoint <= 0f)
         {
             IsDead = true;

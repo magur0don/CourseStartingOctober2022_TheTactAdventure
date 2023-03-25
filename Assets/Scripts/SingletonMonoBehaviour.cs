@@ -50,6 +50,7 @@ public class SingletonMonoBehaviour<T> : MonoBehaviour where T : MonoBehaviour
     // シーン内だけのSingletonとする
     protected static bool isSceneinSingleton = false;
 
+
     public virtual void Awake()
     {
         RemoveDuplicates();
